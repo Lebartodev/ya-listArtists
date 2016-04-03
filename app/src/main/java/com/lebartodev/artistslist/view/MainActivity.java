@@ -37,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
         //Анимация загрузки
         fabProgressCircle = (FABProgressCircle) findViewById(R.id.fabProgressCircle);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        try{
+
+
+        toolbar.setTitle("Исполнители");
+        }
+        catch (NullPointerException e){
+            Toast.makeText(MainActivity.this, "Something is wrong", Toast.LENGTH_SHORT).show();
+        }
         setSupportActionBar(toolbar);
         initFAB();
         //Если есть кэш - выводим его, иначе загружаем из интернета
